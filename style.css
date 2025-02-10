@@ -1,0 +1,9 @@
+.wrapper{
+    width: 70%;
+    margin: auto;
+}
+.active{
+    background-color: #CA1016;
+    color: white;
+}
+.transformTranslate{transform: translate(-50%,-50%);}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo.az</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="grayUi" class="hidden fixed w-full h-full top-0 left-0 bg-[gray] opacity-[0.4] z-10">
+        
+    </div>
+    <div id="liked" class="hidden fixed w-full h-full top-0 left-0 bg-[white] z-20">
+        <button id="closeLiked"><i class="cursor-pointer fa-solid fa-circle-xmark"></i></button>
+        <div id="products2" class="wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 ">
+
+        </div>
+    </div>
+    <header>
+        <nav class="wrapper flex flex-col lg:flex-row items-center justify-between py-3 gap-2.5">
+            <menu class="flex items-center justify-center gap-2">
+                <li class="text-[#8D94AD] cursor-pointer hover:text-[#C91016] ">Tap.az</li>
+                <li class="text-[#8D94AD] cursor-pointer hover:text-[#C91016] ">Bina.az</li>
+                <li class="text-[#8D94AD] cursor-pointer hover:text-[#C91016] ">Boss.az</li>
+            </menu>
+            <menu class="flex items-center justify-center gap-4">
+                <li class="hidden lg:initial">Dəstək: (012) 526-47-47</li>
+                <li class="text-[#8D94AD] hover:text-[#C91016] cursor-pointer">Yardim</li>
+                <li class="text-[#8D94AD] hover:text-[#C91016] cursor-pointer">RU</li>
+                <li id="sevimli" class="text-[#8D94AD] flex items-center gap-2 hover:text-[#C91016] cursor-pointer "><i class="fa-solid fa-heart"></i><span>Sevimliler</span></li>
+                <li class="text-[#8D94AD] flex items-center gap-2 hover:text-[#C91016] cursor-pointer "><i class="fa-solid fa-circle-user"></i><span>Giris</span></li>
+            </menu>
+        </nav>
+        <nav class="bg-[#CA1016]">
+            <div class="wrapper flex  flex-row items-center justify-between py-5">
+                <div class="font-bold text-[white] text-[1.2em]">TURBO.AZ</div>
+                <div class="block lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <menu class="hidden lg:flex items-center justify-center text-white gap-2.5">
+                    <li class="hover:text-[#F5CECD] cursor-pointer">Bütün elanlar</li>
+                    <li class="hover:text-[#F5CECD] cursor-pointer">Dilerlər</li>
+                    <li class="hover:text-[#F5CECD] cursor-pointer">Avtokataloq</li>
+                    <li class="hover:text-[#F5CECD] cursor-pointer">Moto</li>
+                    <li class="hover:text-[#F5CECD] cursor-pointer">Ehtiyat hissələr və aksesuarlar</li>
+                    <li class="hover:text-[#F5CECD] cursor-pointer">İcarə</li>
+                </menu>
+                <button id="add" class="hidden lg:flex items-center gap-2.5 text-[white] bg-[#7ED321] py-2 px-3 rounded-[0.6em]"><i class="fa-solid fa-plus"></i>Yeni Elan</button>
+                <div id="list" class=" fixed rounded-[8px] w-[80%] h-max py-5 top-[-50%] left-[50%] duration-300 bg-white z-30 transformTranslate">
+                    <div class="p-3">
+                        <button id="closeTab"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                    <div class=" flex justify-evenly h-full">
+                        <div class="h-full px-5 flex flex-col gap-6">
+                            <label for="">
+                                Qiymet: <br>
+                                <input id="price" type="number" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0">
+                            </label>
+                            <label for="">
+                                Marka: <br>
+                                <input id="addedmarka" type="text" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0">
+                            </label>
+                            <label for="">
+                                Model: <br>
+                                <input id="addedmodel" type="text" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0">
+                            </label>
+                            <label for="">
+                                Buraxilis Ili:
+                                <select class="border-1 outline-0 border-[#d9d9d9] rounded-[8px]" id="bili"></select>
+                                <!-- <input type="text" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0"> -->
+                            </label>
+                            <label for="">
+                                Yurus: <br>
+                                <input id="yurus" type="number" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0">
+                            </label>
+                            <label for="">
+                                Muherrik: <br>
+                                <input id="muherrik" type="text" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0">
+                            </label>
+                        </div>
+                        <difv class="h-full flex flex-col justify-between gap-5">
+                            <label for="">
+                                Sekil Elave Edin :
+                                <input id="image" type="file" class="bg-black text-white p-2 rounded-[8px]" >
+                            </label>
+                            <button id="carAdd" class="hidden w-full lg:flex items-center gap-2.5 text-[white] bg-[#7ED321] py-2 px-3 rounded-[0.6em]"><i class="fa-solid fa-plus"></i>Elave Edin</button>
+                        </difv>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main >
+        <div class="bg-[#E5E7EC]">
+
+        
+        <div class="wrapper grid grid-cols-1 lg:grid-cols-4  gap-2 py-4 ">
+            <select id="marka" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
+                <option selected>Marka</option>
+            </select>
+            <select disabled id="model" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
+                <option selected class="">Model</option>
+            </select>
+            <div class="flex items-center justify-center year">
+                <div class="w-full active cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Hamisi</div>
+                <div class="w-full cursor-pointer flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Yeni</div>
+                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Surulmus</div>
+            </div>
+            <select id="seher" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
+                <option class="">Seher</option>
+            </select>
+            <div class="flex items-center">
+                <div class="w-full cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <input type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.min">
+                </div>
+                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <input type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.max">
+                </div>
+            </div>
+            <div class="flex items-center justify-between deyerler">
+                <div class="h-full bg-white rounded-[8px] py-2 px-5">AZN</div>
+                <div class="h-full bg-white rounded-[8px] py-2 px-5">Kredit</div>
+                <div class="h-full bg-white rounded-[8px] py-2 px-5">Barter</div>
+            </div>
+            <select id="" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
+                <option class="">Ban Novu</option>
+            </select>
+            <div class="flex items-center">
+                <div class="w-full cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <select class="w-full h-full outline-0 border-0" id="">
+                        <option value="">Il,min.</option>
+                    </select>
+                </div>
+                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <select class="w-full h-full outline-0 border-0" id="">
+                        <option value="">maks.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper py-3 flex items-center justify-between">
+            <div>
+                Bu gün: <span class="text-[#4C95F7]">1410 yeni elan</span>
+            </div>
+            <div class="flex items-center justify-center gap-5">
+                <button class="text-[#8D94AD] bg-transparent border-0 outline-0">Sifirla</button>
+                <button class="text-[#CA1016] bg-transparent border-0 outline-0 flex items-center gap-2">Daha Cox Filter <i class="fa-solid fa-chevron-down"></i></button>
+                <button id="elan" class="py-3 px-2 bg-[#CA1016] text-white rounded-[8px]">Elanlari Goster</button>
+            </div>
+        </div>
+    </div>
+        <div  class="py-12 bg-[#F6F7FA] h-full">
+            <div id="products" class="wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 ">
+                <div id="id0" class="product flex flex-col rounded-[8px] items-start bg-white">
+                    <div class="relative h-[220px] w-full">
+                        <img src="img/bmw.jpg" class="w-full h-full object-cover rounded-t-[8px] " alt="">
+                        <i class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
+                    </div>
+                    <div class="p-3 flex flex-col ">
+                        <span class="font-bold">53 000 $</span>
+                        <div>
+                            <span>BMW </span>
+                            <span>X6 M</span>
+                        </div>
+                        <span>2015, 4.4 L , 94 000 km</span>
+                        <span class="text-[#8D94AD] text-[0.9em]">Baki,bu gun 17.04</span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
