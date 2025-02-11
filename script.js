@@ -949,6 +949,7 @@ for (let i = 0; i < markalarMobile.length; i++) {
     marka.innerHTML += `<option>${markalarMobile[i].markaM}</option>`
 }
 const model = document.getElementById('model')
+let carsModel = []
 marka.onchange = function () {
     let emp = ''
 
@@ -960,7 +961,9 @@ marka.onchange = function () {
     model.innerHTML = `<option>Model</option>`
     model.innerHTML += emp
     model.disabled = false
+    console.log(carsModel);
 }
+
 const products = document.getElementById('products')
 function showAllCars() {
     let product = ''
@@ -993,9 +996,10 @@ model.onchange = function () {
 }
 const seher = document.getElementById('seher')
 
-for (let i = 0; i < cars.length; i++) {
-    seher.innerHTML += `<option>${cars[i].city}</option>`
-}
+let cities = []
+for (let i = 0; i < cars.length; i++) {if(!cities.includes(cars[i].city)){cities.push(cars[i].city)}}
+cities.map(item => seher.innerHTML += `<option>${item}</option>`)
+
 seher.onchange = function () {
     let product = ''
     elan.onclick = function () {
