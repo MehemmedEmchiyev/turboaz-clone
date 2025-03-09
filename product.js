@@ -40,6 +40,8 @@ function showFooter(){
     }
     carsAnchors2.innerHTML = kod
 }
+
+
 function showDetails(){
     details.innerHTML = 
     `
