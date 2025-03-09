@@ -114,19 +114,19 @@
                 <option class="">Seher</option>
             </select>
             <div class="flex items-center">
-                <div class="w-full cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
-                    <input type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.min">
+                <div  class="w-full cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <input id="minprice" type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.min">
                 </div>
-                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
-                    <input type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.max">
+                <div  class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <input id="maxprice" type="text" class="w-[100px] outline-0 border-0" placeholder="Qiymet.max">
                 </div>
             </div>
-            <div class="flex items-center justify-between deyerler">
-                <div class="h-full bg-white rounded-[8px] py-2 px-5">AZN</div>
-                <div class="h-full bg-white rounded-[8px] py-2 px-5">Kredit</div>
-                <div class="h-full bg-white rounded-[8px] py-2 px-5">Barter</div>
+            <div id="valyuta" class="flex items-center justify-between deyerler">
+                <div id="azn" class="h-full bg-white rounded-[8px] py-2 px-5 cursor-pointer">AZN</div>
+                <div id="credit" class="h-full bg-white rounded-[8px] py-2 px-5 cursor-pointer">Kredit</div>
+                <div id="barter" class="h-full bg-white rounded-[8px] py-2 px-5 cursor-pointer">Barter</div>
             </div>
-            <select id="" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
+            <select id="bantype" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
                 <option class="">Ban Novu</option>
             </select>
             <div class="flex items-center">
@@ -148,14 +148,20 @@
             </div>
             <div class="flex items-center justify-center gap-5">
                 <button class="text-[#8D94AD] bg-transparent border-0 outline-0">Sifirla</button>
-                <button class="text-[#CA1016] bg-transparent border-0 outline-0 flex items-center gap-2">Daha Cox Filter <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="text-[#CA1016] bg-transparent border-0 outline-0 flex items-center gap-2">Daha Cox Filter</button>
+                <select id="variants">
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                    <option value="bu">Bahadan Ucuza</option >
+                    <option value="ub">Ucuzdan Bahaya</option>
+                </select>
                 <button id="elan" class="py-3 px-2 bg-[#CA1016] text-white rounded-[8px]">Elanlari Goster</button>
             </div>
         </div>
     </div>
         <div  class="py-12 bg-[#F6F7FA] h-full">
             <div id="products" class="wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 ">
-                <div id="id0" class="product flex flex-col rounded-[8px] items-start bg-white">
+                <!-- <div id="id0" class="product flex flex-col rounded-[8px] items-start bg-white">
                     <div class="relative h-[220px] w-full">
                         <img src="img/bmw.jpg" class="w-full h-full object-cover rounded-t-[8px] " alt="">
                         <i class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
@@ -169,13 +175,19 @@
                         <span>2015, 4.4 L , 94 000 km</span>
                         <span class="text-[#8D94AD] text-[0.9em]">Baki,bu gun 17.04</span>
                     </div>
-                </div>
+                </div> -->
 
                 
             </div>
         </div>
     </main>
+    <footer class="bg-[#F1F3F7]">
+        <div id = "carsAnchors" class="wrapper grid grid-cols-7 py-7 ">
+            <!-- <a class="text-[#8D94AD] pr-[13px] pb-[13px] hover:text-[#CC212C]" href="">Toyota(12)</a> -->
 
+        </div>
+    </footer>
+    <script src="turbo.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
