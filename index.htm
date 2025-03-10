@@ -9,11 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="grayUi" class="hidden fixed w-full h-full top-0 left-0 bg-[gray] opacity-[0.4] z-10">
-        
-    </div>
-    <div id="liked" class="hidden fixed w-full h-screen top-0 left-0 bottom-0 bg-[gray]  z-20 ">
-        <div class="border-b-1 border-[#b4b1b1] ">
+    <div id="liked" class="hidden fixed w-full h-screen top-0 left-0 bottom-0 bg-white  z-20 ">
+        <div class="border-b-1 border-[#d1d1d1]">
             <button id="closeLiked" class="px-15 py-2"><i class="cursor-pointer fa-solid fa-circle-xmark"></i></button>
         </div>
         <div id="products2" class=" wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 py-2.5">
@@ -71,7 +68,6 @@
                             <label for="">
                                 Buraxilis Ili:
                                 <select class="border-1 outline-0 border-[#d9d9d9] rounded-[8px]" id="bili"></select>
-                                <!-- <input type="text" class="w-[350px] bg-[#d7d2d2] py-1.5 rounded-[8px] px-1 outline-0"> -->
                             </label>
                             <label for="">
                                 Yurus: <br>
@@ -160,32 +156,11 @@
         </div>
     </div>
         <div  class="py-12 bg-[#F6F7FA] h-full">
-            <div id="products" class="wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 ">
-                <!-- <div id="id0" class="product flex flex-col rounded-[8px] items-start bg-white">
-                    <div class="relative h-[220px] w-full">
-                        <img src="img/bmw.jpg" class="w-full h-full object-cover rounded-t-[8px] " alt="">
-                        <i class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
-                    </div>
-                    <div class="p-3 flex flex-col ">
-                        <span class="font-bold">53 000 $</span>
-                        <div>
-                            <span>BMW </span>
-                            <span>X6 M</span>
-                        </div>
-                        <span>2015, 4.4 L , 94 000 km</span>
-                        <span class="text-[#8D94AD] text-[0.9em]">Baki,bu gun 17.04</span>
-                    </div>
-                </div> -->
-
-                
-            </div>
+            <div id="products" class="wrapper gap-3 grid grid-cols-1 lg:grid-cols-4 "></div>
         </div>
     </main>
     <footer class="bg-[#F1F3F7]">
-        <div id = "carsAnchors" class="wrapper grid grid-cols-2 md:grid-cols-7 py-7 ">
-            <!-- <a class="text-[#8D94AD] pr-[13px] pb-[13px] hover:text-[#CC212C]" href="">Toyota(12)</a> -->
-
-        </div>
+        <div id = "carsAnchors" class="wrapper grid grid-cols-2 md:grid-cols-7 py-7 "></div>
     </footer>
     <script src="turbo.js"></script>
     <script src="script.js"></script>

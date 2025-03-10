@@ -6,6 +6,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", monospace;
+    --color-red-500: oklch(0.637 0.237 25.331);
+    --color-red-600: oklch(0.577 0.245 27.325);
     --color-amber-400: oklch(0.828 0.189 84.429);
     --color-black: #000;
     --color-white: #fff;
@@ -278,12 +280,6 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .grid-cols-7 {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -365,6 +361,10 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
   .border-\[1px\] {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -373,14 +373,17 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-\[\#b4b1b1\] {
-    border-color: #b4b1b1;
+  .border-\[\#d1d1d1\] {
+    border-color: #d1d1d1;
   }
   .border-\[\#d9d9d9\] {
     border-color: #d9d9d9;
   }
   .border-\[\#dfe3e9\] {
     border-color: #dfe3e9;
+  }
+  .border-\[gray\] {
+    border-color: gray;
   }
   .bg-\[\#7ED321\] {
     background-color: #7ED321;
@@ -397,17 +400,23 @@
   .bg-\[\#F6F7FA\] {
     background-color: #F6F7FA;
   }
+  .bg-\[\#d1d1d1\] {
+    background-color: #d1d1d1;
+  }
   .bg-\[\#d7d2d2\] {
     background-color: #d7d2d2;
-  }
-  .bg-\[gray\] {
-    background-color: gray;
   }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
   }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
   }
   .bg-transparent {
     background-color: transparent;
@@ -527,14 +536,14 @@
   .text-\[white\] {
     color: white;
   }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
   .text-white {
     color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
-  }
-  .opacity-\[0\.4\] {
-    opacity: 0.4;
   }
   .outline {
     outline-style: var(--tw-outline-style);

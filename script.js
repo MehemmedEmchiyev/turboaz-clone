@@ -9,11 +9,17 @@ const valyuta = document.querySelectorAll("#valyuta div")
 const minprice = document.getElementById("minprice")
 const maxprice = document.getElementById("maxprice")
 const variants = document.getElementById("variants")
+const sevimli = document.getElementById("sevimli")
+const liked = document.getElementById("liked")
+const closeLiked = document.getElementById("closeLiked")
+const products2 = document.getElementById("products2")
 showAllProduct()
 showFooterProduct()
 markas()
 sehers()
 bantypes()
+sevimli.onclick = function(){liked.style.display = "block"}
+closeLiked.onclick = function(){liked.style.display = "none"}
 variants.onchange = function eli(){
     let newArr = []
     newArr = variants.value == "az" ? data.map(item => item).sort( (a,b) => {if(a.brand < b.brand) return -1 } ) :
@@ -108,7 +114,7 @@ function showAllProduct(){
                 <a href="product.htm?id=${item.id}" target="_blank">
                     <img src="${item.images}" class="w-full h-full object-cover rounded-t-[8px] " alt="">
                 </a>
-                    <i class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
+                    <i onclick="addWish(${item.id},this)" class=" fa-regular  fa-heart z-10 absolute right-[3%] top-[3%]"></i>
                 </div>
                 <div class="p-3 flex flex-col ">
                     <span class="font-bold">${item.price} ${item.currency}</span>
@@ -132,8 +138,10 @@ function renderProducts(arg){
     `
         <div id="id${item.id}" class="product flex flex-col rounded-[8px] items-start bg-white">
             <div class="relative h-[220px] w-full">
-                <img src="${item.images}" class="w-full h-full object-cover rounded-t-[8px] " alt="">
-                <i class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
+                <a href="product.htm?id=${item.id}" target="_blank">
+                    <img src="${item.images}" class="w-full h-full object-cover rounded-t-[8px] " alt="">
+                </a>
+                <i onclick="addWish(${item.id},this)" class="fa-regular fa-heart z-10 absolute right-[3%] top-[3%]"></i>
             </div>
             <div class="p-3 flex flex-col ">
                 <span class="font-bold">${item.price} ${item.currency}</span>
@@ -148,4 +156,42 @@ function renderProducts(arg){
     `})
     }
     products.innerHTML = kod
+}
+let wishList = JSON.parse(localStorage.getItem("likedCars")) || []
+localWishList()
+function localWishList(){
+    let kod = ""
+    wishList.length ? wishList.map(item => {
+        kod += 
+        `
+        <div id="id${item.id}" class="product flex flex-col rounded-[8px] items-start bg-[#d1d1d1]">
+            <div class="relative h-[220px] w-full">
+                <a href="product.htm?id=${item.id}" target="_blank">
+                    <img src="${item.images}" class="w-full h-full object-cover rounded-t-[8px] " alt="">
+                </a>
+                <i onclick="addWish(${item.id},this)" class="fa-regular text-red-500  fa-heart z-10 absolute right-[3%] top-[3%]"></i>
+            </div>
+            <div class="p-3 flex flex-col ">
+                <span class="font-bold">${item.price} ${item.currency}</span>
+                <div>
+                    <span>${item.brand} </span>
+                    <span>${item.model}</span>
+                </div>
+                <span>${item.year}, ${item.engine} L , ${item.odometer} km</span>
+                <span class="text-[#8D94AD] text-[0.9em]">${item.city},${item.dates}</span>
+            </div>
+        </div>
+        `        
+}) : kod = ""
+products2.innerHTML = kod
+}
+
+function addWish(params,th) {
+    th.classList.contains("text-red-500") ? th.classList.remove("text-red-500") : th.classList.toggle("text-red-500")
+    let likedCar = data.find(item => item.id == params)
+    let index = wishList.indexOf(likedCar);
+    th.classList.contains("text-red-500") ? wishList.push(likedCar) : wishList.splice(index,1) 
+    localStorage.setItem("likedCars",JSON.stringify(wishList))
+    if(!wishList.includes(likedCar))localStorage.setItem("likedCars",JSON.stringify(wishList))  
+    localWishList()
 }
