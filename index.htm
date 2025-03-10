@@ -101,10 +101,10 @@
             <select disabled id="model" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
                 <option selected class="">Model</option>
             </select>
-            <div class="flex items-center justify-center year">
-                <div class="w-full active cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Hamisi</div>
-                <div class="w-full cursor-pointer flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Yeni</div>
-                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Surulmus</div>
+            <div id="allNewOld" class="flex items-center justify-center year">
+                <div id="allCars" class="w-full active cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Hamisi</div>
+                <div id="newCar" class="w-full cursor-pointer flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Yeni</div>
+                <div id="oldCar"  class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">Surulmus</div>
             </div>
             <select id="seher" class="px-2 text-[#bababa] h-[46px] border-[1px] rounded-[0.4em] border-[#dfe3e9] bg-white outline-0">
                 <option class="">Seher</option>
@@ -126,14 +126,9 @@
                 <option class="">Ban Novu</option>
             </select>
             <div class="flex items-center">
-                <div class="w-full cursor-pointer rounded-l-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
-                    <select class="w-full h-full outline-0 border-0" id="">
-                        <option value="">Il,min.</option>
-                    </select>
-                </div>
-                <div class="w-full cursor-pointer rounded-r-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
-                    <select class="w-full h-full outline-0 border-0" id="">
-                        <option value="">maks.</option>
+                <div class="w-full cursor-pointer rounded-[8px] flex items-center justify-center bg-white text-[#8D94AD] p-[11px]">
+                    <select id="minyear" class="w-full h-full outline-0 border-0" id="">
+                        <option value="">Il.</option>
                     </select>
                 </div>
             </div>

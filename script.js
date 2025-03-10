@@ -13,11 +13,34 @@ const sevimli = document.getElementById("sevimli")
 const liked = document.getElementById("liked")
 const closeLiked = document.getElementById("closeLiked")
 const products2 = document.getElementById("products2")
+const minyear = document.getElementById("minyear")
+const allNewOld = document.querySelectorAll("#allNewOld div")
 showAllProduct()
 showFooterProduct()
 markas()
 sehers()
 bantypes()
+years()
+allNewOld.forEach(item => {
+    item.onclick = function(){
+        allNewOld.forEach(element => element.classList.remove("active"))
+        item.classList.add("active")
+        let newArr = []
+        newArr = item.id == "allCars" ? data.map(item => item ) :
+                 item.id == "newCar"  ? data.filter(item => item.year > 2016 ) :
+                                        data.filter(item => item.year < 2016)  
+        renderProducts(newArr)    
+        }
+})
+minyear.onchange = function(){
+    let yearArr = data.filter(item => item.year == minyear.value)
+    renderProducts(yearArr)
+}
+function years(){
+    const set = new Set()
+    data.map(item => set.add(item.year))
+    uniqueValue(minyear,Array.from(set).sort())
+}
 sevimli.onclick = function(){liked.style.display = "block"}
 closeLiked.onclick = function(){liked.style.display = "none"}
 variants.onchange = function eli(){
